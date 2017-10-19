@@ -1,16 +1,12 @@
 package com.soft.controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.soft.entity.ParamsBody;
 import com.soft.entity.ReturnBody;
 import com.soft.entity.User;
 import com.soft.service.UserService;
@@ -23,10 +19,10 @@ public class UserController {
      private UserService us;
 	 
 	 @RequestMapping(value="/add",method=RequestMethod.POST)
-	 
-	 public @ResponseBody void  addUser( @RequestBody ParamsBody body,HttpServletRequest request){
-		 System.out.println(body);
-//		 us.addUser(user);
+	 @ResponseBody 
+	 public void  addUser(@RequestBody User user){
+		 System.out.println(user);
+         us.addUser(user);
 	 }
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
