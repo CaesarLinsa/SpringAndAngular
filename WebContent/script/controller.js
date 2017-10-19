@@ -40,33 +40,41 @@ app.controller("myController",function($scope,$http){
      }]).controller("login_successCtr",['$scope','$cookieStore',function($scope,$cookieStore){
         var username=$cookieStore.get("userName"); 
     	 $scope.result=username+values;
-  }]).controller('registerCtrl',['scope','$http',function($scope,$http){
-
-     if($scope.checkMatch()){
-
-         $http({
-              method: 'post',
-              url: 'user/add',
-              params: $scope.form
-         }).success(
-             console.log("okkkkkkkk")
-         ).error(
-             console.log("notokkkkkkkkk")
-         )
-
-     }
+  }]).controller('registerCtrl',['$scope','$http',function($scope,$http){
 
 
+    $scope.register = function() {
 
+        if ($scope.checkMatch()) {
 
-    $scope.checkMatch=function(){
+            $http({
+                method: 'post',
+                url: 'user/add',
+                data: $scope.form
+            }).success(
+                console.log("okkkkkkkk")
+            ).error(
+                console.log("notokkkkkkkkk")
+            )
+
+        }
+        else{
+            angular.forEach($scope.registerForm,function(e){
+                if(typeof(e) == 'object' && typeof(e.$dirty) == 'boolean'){
+                    e.$dirty = true;
+                }
+            });
+        }
+    }
+
+    $scope.checkMatch = function(){
         var form = $scope.form;
         if(form.passWord && form.passwordConfirm){
             if(form.passWord!=form.passwordConfirm){
                 return false;
             }
         }
-            return true;
+        return true;
     };
 
 }]);
