@@ -51,7 +51,7 @@
 
            url: '/register',
            views: {
-               'info@home': {
+               "info@home": {
                    templateUrl: 'html/register.html',
                    controller: 'registerCtrl'
                }
