@@ -18,6 +18,7 @@ public class UserController {
 	 @Resource
      private UserService us;
 	 
+
 	 @RequestMapping(value="/add",method=RequestMethod.GET)
 	 @ResponseBody 
 	 public void  addUser(@RequestBody User user){
