@@ -12,6 +12,13 @@
    select * from user where username=#{userName} and password=#{passWord}
    </select>
   
+  <select id="findUserbyUserName" parameterType="String" resultType="User">
+     select * from user <where>
+          <if test="_parameter!= null">
+            userName=#{userName}
+          </if>
+                       </where>
+  </select>
   
   
   </mapper>

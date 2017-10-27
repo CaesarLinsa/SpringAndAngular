@@ -57,6 +57,26 @@
                }
            }
 
+       }).state('home.menu.file_upload',{
+           url: '/file_upload',
+           views: {
+               'info@home': {
+                   templateUrl: 'html/add_file.html' ,
+                   controller: 'fileUploadCtrl'
+               }
+           }
+       }).state('home.menu.file_download',{
+
+           url: '/download',
+           views: {
+
+               'info@home': {
+                   templateUrl: 'html/download_file.html',
+                   controller: 'fileDownloadCtrl'
+
+               }
+           }
+
        });
 
 

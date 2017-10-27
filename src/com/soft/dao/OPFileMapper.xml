@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper  namespace="com.soft.dao.IOPFileDao">
+  
+   <insert id="addFile" parameterType="OPFile">
+   INSERT INTO FILE  (filename,filesize,file_src,file_user_id)  VALUES (#{filename},#{filesize},#{file_src},#{file_user_id})
+   </insert>
+  
+   <select id="getAllFiles" resultType="OPFile">
+   select * from file;
+   </select>
+  
+  
+  
+  </mapper>

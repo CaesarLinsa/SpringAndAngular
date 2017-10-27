@@ -16,6 +16,11 @@
     <mvc:default-servlet-handler />
     <mvc:annotation-driven/>
     
+    <!-- 文件上传解析器  -->
+    <bean id="multipartResolver" class="com.soft.util.CaesarMultipartResolver">
+        <property name="maxUploadSize" value="100000000000000"/>
+    </bean>
+    
     <!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	 	<!-- 前缀 -->

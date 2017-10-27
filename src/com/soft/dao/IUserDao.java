@@ -8,5 +8,6 @@ public interface IUserDao {
 	
 	public void addUser(User user);
 	public List<User> checkUser(User user);
+	public User findUserbyUserName(String userName);
 
 }

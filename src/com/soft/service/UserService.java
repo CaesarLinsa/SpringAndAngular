@@ -29,5 +29,17 @@ public class UserService implements IUserService{
 		
 		return false;	
 	}
-
+   
+	
+	public User findUserByUserName(String userName){
+				
+		User user = iua.findUserbyUserName(userName);
+		
+		if(user!=null){
+			return user;
+		}
+       
+		return null;
+	}
+	
 }
