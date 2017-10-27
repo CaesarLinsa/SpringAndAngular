@@ -18,7 +18,7 @@ public class UserController {
 	 @Resource
      private UserService us;
 	 
-	 @RequestMapping(value="/add",method=RequestMethod.POST)
+	 @RequestMapping(value="/add",method=RequestMethod.GET)
 	 @ResponseBody 
 	 public void  addUser(@RequestBody User user){
 		 System.out.println(user);
@@ -35,6 +35,6 @@ public class UserController {
 			body.setMsg("登录失败");
 		}
 		return body;
-
-	}		
+	}	
+	
 }

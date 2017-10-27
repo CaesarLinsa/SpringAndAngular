@@ -1,0 +1,11 @@
+<div>
+
+  <!--<div ng-repeat="file in getFiles()">
+   <a ng-href="file.file_src">file.filename下载</a>
+   </div>-->
+     <div ng-repeat="file in Files">
+         <a ng-href="file/file_download?file_src={{file.file_src}}" download="#">{{file.filename}}</a>
+
+     </div>
+
+</div>
