@@ -1,0 +1,45 @@
+<div class="register">
+    <form role="form" name="registerForm" ng-submit="register(registerForm.$valid)" class="form-horizontal" autocomplete="off" novalidate>
+        <div class="item-cell">
+            <span class="item-title">用户名</span>
+            <div class="input-box">
+                <input class="form-input" id="userName" name="userName" ng-model="form.userName" type="text" required>
+            </div>
+        </div>
+        <div class="item-cell">
+            <span class="item-title">密码</span>
+            <div class="input-box">
+                <input class="form-input" id="passWord" name="passWord" ng-model="form.passWord"  type="password" required />
+            </div>
+        </div>
+        <div class="item-cell">
+            <span class="item-title">密码确认</span>
+            <div class="input-box">
+                <input class="form-input" id="passwordConfirm" name="passwordConfirm" ng-model="form.passwordConfirm"  ng-blur="checkMatch()" type="password" required/>
+            </div>
+        </div>
+        <div class="item-cell">
+            <span class="item-title">性别</span>
+            <div class="input-box">
+                <input class="form-input" id="gender" name="gender" ng-model="form.gender" type="text">
+            </div>
+        </div>
+        <div class="item-cell">
+            <span class="item-title">年龄</span>
+            <div class="input-box">
+                <input class="form-input" id="age" name="age" ng-model="form.age" type="text">
+            </div>
+        </div>
+        <div class="item-cell">
+            <span class="item-title">验证码</span>
+            <div class="input-box">
+                <input class="form-input" type="text" id="kaptcha" name="kaptcha" ng-model="form.kaptcha" minlength="4" maxlength="4" required/>
+                <img ng-src="/ajax/captcha-image" ng-click = "changeCaptcha($event)" title="看不清，点击换一张" height="32" />
+            </div>
+        </div>
+        <div class="item-button">
+            <input class="login-button" type="submit" value="注册" />
+        </div>
+    </form>
+</div>
+

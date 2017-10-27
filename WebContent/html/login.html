@@ -1,0 +1,29 @@
+<div class="login-content">
+    <form role="form" name="loginForm" id="loginForm" ng-submit="login()">
+    <div class="item">
+        <i class="iconfont icon-zhanghu"></i>
+        <div class="p-input">
+            <input  type="text" id="userName" name="userName" ng-model="form.userName" placeholder="请输入用户名" required autofocus>
+        </div>
+    </div>
+    <div class="item">
+        <i class="iconfont icon-mima"></i>
+        <div class="p-input">
+            <input  type="password" id="password" name="password" ng-model="form.password" placeholder="请输入密码">
+        </div>
+    </div>
+    <div class="selected">
+        <label><input type="checkbox" ng-model="form.isRemember"> <span>记住我</span></label>
+    </div>
+    <div class="tips" role="alert" ng-show="loginForm.userName.$invalid">
+        <span ng-show="loginForm.userName.$dirty && loginForm.userName.$error.required"><span>请输入用户名</span></span>
+    </div>
+    <div class="tips" role="alert" ng-show="loginInfo.loginerror">
+        <strong>Warning! </strong><span ng-bind="loginInfo.loginerroinfo"></span>
+    </div>
+    </form>
+    <button type="button" class="login-button" ng-click="login()">登 录</button>
+</div>
+
+<div ng-bind="result">
+</div>
